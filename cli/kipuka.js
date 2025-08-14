@@ -1,19 +1,14 @@
 #!/usr/bin/env node
 import { basename, join } from "path";
 import { start, kipuka } from "../framework/index.js";
-import {
-  globalConfigDir,
-  consumeHeadArg,
-} from "../framework/internal.js";
+import { globalConfigDir, consumeHeadArg } from "../framework/internal.js";
 
 async function runKipuka(name) {
   if (!name) {
     return start(kipuka);
   }
-  const location = new URL(
-    join(globalConfigDir, basename(name + ".js")),
-    "file:///"
-  ).href;
+  const location = join(globalConfigDir, basename(name + ".js"));
+
   let choice;
   try {
     choice = (await import(location)).default;
@@ -29,6 +24,6 @@ async function runKipuka(name) {
 let name = consumeHeadArg();
 if (!name || name == "--") {
   runKipuka();
-} else{
-  runKipuka(name)
+} else {
+  runKipuka(name);
 }
