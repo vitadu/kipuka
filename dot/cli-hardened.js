@@ -8,7 +8,7 @@ import {
   withNpmPackages,
   withRuns,
   withOfflineOption,
-} from "../framework/index.js";
+} from "@lavamoat/kipuka";
 
 const withNodePermsOption = () => ({
   id: "withNodePermsOption",

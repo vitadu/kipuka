@@ -6,7 +6,7 @@ import {
   withCliWrapEntrypoint,
   requireExtensions,
   withHelp,
-} from "../framework/index.js";
+} from "@lavamoat/kipuka";
 
 export default [
   ...without(kipuka, ["withEntrypoint", "withHelp"]),
