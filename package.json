@@ -1,0 +1,42 @@
+{
+  "name": "@lavamoat/kipuka",
+  "version": "0.0.1",
+  "type": "module",
+  "module": "framework/index.js",
+  "exports": {
+    ".": "./framework/index.js"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lavamoat/kipuka.git"
+  },
+  "keywords": [
+    "install",
+    "script",
+    "container",
+    "docker",
+    "dev",
+    "devenv"
+  ],
+  "author": "naugtur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lavamoat/kipuka/issues"
+  },
+  "files": [
+    "cli",
+    "framework",
+    "dot",
+    "kipuka.jpg"
+  ],
+  "homepage": "https://github.com/lavamoat/kipuka#readme",
+  "description": "Easy, composable and transparent way to run things in a docker container.",
+  "bin": {
+    "kipuka": "./cli/kipuka.js",
+    "kipuka-ctl": "./cli/kipuka-ctl.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30"
+  }
+}
