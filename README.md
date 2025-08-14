@@ -28,7 +28,8 @@ Set up once, and every time you run `npm [anything]` it will run in a container.
 
 ```bash
 # Install kipuka globally
-npm install -g @lavamoat/kipuka
+# (It will be published to npm as @lavamoat/kipuka after some more tests)
+npm install -g https://github.com/lavamoat/kipuka
 
 # Initialize configuration
 kipuka-ctl init
