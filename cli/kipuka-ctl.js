@@ -97,8 +97,8 @@ const commands = {
       console.log("Empty output from docker images.");
     }
   },
-  async init() {
-    if (!existsSync(globalConfigDir)) {
+  async init(options={}) {
+    if (!existsSync(globalConfigDir) || options.force) {
       await mkdir(globalConfigDir, { recursive: true });
       const dotFolder = join(import.meta.dirname, "..", "dot");
       if (!existsSync(dotFolder)) {
@@ -127,7 +127,7 @@ const commands = {
         );
       }
     } else {
-      console.log("~/.kipuka directory already exists");
+      console.log("~/.kipuka directory already exists. Add --force to override.");
     }
   },
   async alias(options = {}) {
@@ -168,6 +168,7 @@ const { positionals, values } = parseArgs({
   options: {
     use: { type: "string" },
     set: { type: "string" },
+    force: { type: "boolean" },
   },
   strict: false,
 });

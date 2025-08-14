@@ -33,9 +33,9 @@ npm install -g @lavamoat/kipuka
 # Initialize configuration
 kipuka-ctl init
 
-# Set up shell aliases for package managers
-kipuka-ctl alias
-## or put `kipuka alias` at the end of your .bashrc
+# Set up shell aliases for package managers in your current shell
+eval $(kipuka-ctl alias)
+## or put `eval $(kipuka-ctl alias)` at the end of your .bashrc
 ```
 
 Now npm, yarn, pnpm run in docker containers
@@ -51,15 +51,6 @@ npx create-next-app my-app
 
 Kipuka lets you run any CLI tool in a containerized environment without polluting your host system or worrying about what that sketchy package is actually doing.
 
-### Hardened alias
-
-To use a more hardened version of the alias you can try:
-
-```
-kipuka-ctl alias --use=cli-hardened
-```
-
-The current version hsa a few tweaks, options to run offline and limit node permissions and uses `npq` instead of your package manager of choice. It's a work in progress.
 
 ### Start bash in kipuka in your current folder
 
@@ -82,6 +73,15 @@ kipuka my --help
 Run `kipuka-ctl cleanup` and it'll help you clean things up one by one.
 
 
+### Hardened alias
+
+To use a hardened version of npm install, try:
+
+```
+alias npmi='kipuka cli-hardened'
+```
+
+The current version has a few tweaks, options to run offline and limit node permissions and uses `npq` instead of your package manager of choice. It's a work in progress and not ready to be an npm replacement, just npm install replacement.
 
 ## Commands
 
